@@ -24,3 +24,10 @@ function getPart($name) {
 	include __DIR__ . '/../parts/'. $name . '.php';
 }
 
+function getUserData($link){
+    $file = file_get_contents($link);
+    $data = json_decode($file);
+    foreach($data as $item => $value){
+        echo $item . " => " . $value;
+    }
+}
